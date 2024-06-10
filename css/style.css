@@ -57,3 +57,35 @@
     font-weight: 500;
     color: #9b1768;
 }
+
+/* ABOUT */
+#aboutBody{
+    background-color:rgba(112, 112, 112, 0.429);
+    
+}
+#mainAboutCard{
+    margin-top: 10px;
+    background-image: url('https://yolandamatiwane.github.io/ecomImages/images.jpg');
+    height: 520px;
+    padding: auto;
+}
+#mainAboutCard #left{
+    background-color: #14345391;
+    color: #ffffff;
+    font-weight: 600;
+    height: 240px;
+    margin-top: 10px;
+}
+#mainAboutCard #right{
+    background-color: rgba(128, 0, 128, 0.537);
+    color: #ffffff;
+    height: 240px;
+    margin-top: 10px;
+}
+
+#mainAboutCard #mid{
+    background-color: #9b17688d;
+    color: #ffffff;
+    height: 490px;
+    margin-top: 10px;
+}
