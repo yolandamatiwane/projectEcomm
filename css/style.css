@@ -33,6 +33,7 @@
     width: 80rem;
     height: 25rem;
     background-color: rgba(36, 121, 195, 0);
+    margin-bottom: 20px;
 }
 #indexCard h3{
     color: #9b1768;
@@ -45,3 +46,14 @@
     height: 25rem;
 }
 
+/* footer */
+#footer{
+	/* border-top: 2px solid rgb(5, 120, 112); */
+    
+	padding-top: .7em;
+}
+.copyright{
+    /* text-align: right; */
+    font-weight: 500;
+    color: #9b1768;
+}
