@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    font-family: 'Poppins',sans-serif;
+    text-align: center;
+}
+#index{
+    /* background-image: url('https://c1.wallpaperflare.com/preview/458/621/227/pink-macaroon-sketchbook-colored-pencil.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; */
+    background-color: #ffffff;
+}
+.nav-link, .navbar-brand{
+    color: rgb(35, 122, 89);
+    font-weight: 600;
+}
+.navebar-custom{
+    background-color: rgb(173, 58, 189);
+}
+#indexCard .card-text{
+    color: rgb(35, 122, 89);
+    font-weight: 700;
+    
+    /* color: rgb(66, 190, 170);
+    text-shadow: 2px 2px 4px #f8f8f8; */
+    overflow: hidden; 
+}
+#indexCard{
+    margin-left: 50px;
+    margin-top: 100px;
+    align-content: center;
+    
+    border: none;
+    width: 80rem;
+    height: 25rem;
+    background-color: rgba(36, 121, 195, 0);
+}
+#indexCard h3{
+    color: #9b1768;
+}
+#indexCard h6{
+    color: #0b0b56;
+}
+#indexPic{
+    width: fit-content;
+    height: 25rem;
+}
+
