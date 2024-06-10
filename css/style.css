@@ -60,32 +60,39 @@
 
 /* ABOUT */
 #aboutBody{
-    background-color:rgba(112, 112, 112, 0.429);
+    background-color:#f4aaf062;
     
 }
 #mainAboutCard{
     margin-top: 10px;
-    background-image: url('https://yolandamatiwane.github.io/ecomImages/images.jpg');
+    background-image: url('https://yolandamatiwane.github.io/ecomImages/cute-pastel-colored-seamless-pattern-background-illustration-with-books-blue-hearts-and-pencil-vector.jpg');
     height: 520px;
+    border: none;
     padding: auto;
+}
+main h3{
+    color: #ed529f;
+    font-weight: 800;
 }
 #mainAboutCard #left{
     background-color: #14345391;
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-weight: 600;
     height: 240px;
     margin-top: 10px;
 }
 #mainAboutCard #right{
-    background-color: rgba(128, 0, 128, 0.537);
-    color: #ffffff;
+    background-color: #7fe07ac9;
+    color: rgb(255, 255, 255);
+    font-weight: 600;
     height: 240px;
     margin-top: 10px;
-}
-
-#mainAboutCard #mid{
-    background-color: #9b17688d;
-    color: #ffffff;
+    }
+    
+    #mainAboutCard #mid{
+    background-color: rgba(128, 0, 128, 0.537);
+    color: rgb(233, 233, 233);
+    font-weight: 600;
     height: 490px;
     margin-top: 10px;
 }
