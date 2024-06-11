@@ -87,13 +87,32 @@ main h3{
     font-weight: 600;
     height: 240px;
     margin-top: 10px;
-    }
+}
     
-    #mainAboutCard #mid{
+#mainAboutCard #mid{
     background-color: rgba(128, 0, 128, 0.537);
     border: 3px solid rgb(128, 0, 128);
     color: rgb(233, 233, 233);
     font-weight: 600;
     height: 490px;
     margin-top: 10px;
+}
+
+article{
+    margin-top: 5%;
+    display:grid;
+    grid-template-columns: repeat( 3, 1fr);
+}
+article img{
+    width: 400px;
+    height: 200px;
+}
+#viewMore{
+    width: 100px;
+}
+#cards{
+    width: 400px;
+}
+#purchase{
+    width: 120px;
 }
