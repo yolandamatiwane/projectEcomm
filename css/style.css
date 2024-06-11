@@ -4,10 +4,11 @@
     text-align: center;
 }
 #index{
-    /* background-image: url('https://c1.wallpaperflare.com/preview/458/621/227/pink-macaroon-sketchbook-colored-pencil.jpg');
-    background-repeat: no-repeat;
-    background-size: cover; */
     background-color: #ffffff;
+}
+#index .nav-link, #index .navbar-brand{
+    color: rgb(201, 50, 193);
+    font-weight: 600;
 }
 .nav-link, .navbar-brand{
     color: rgb(35, 122, 89);
@@ -19,9 +20,6 @@
 #indexCard .card-text{
     color: rgb(35, 122, 89);
     font-weight: 700;
-    
-    /* color: rgb(66, 190, 170);
-    text-shadow: 2px 2px 4px #f8f8f8; */
     overflow: hidden; 
 }
 #indexCard{
@@ -76,13 +74,15 @@ main h3{
 }
 #mainAboutCard #left{
     background-color: #14345391;
-    color: rgb(255, 255, 255);
+    border: 3px solid #143353;
+    color: rgb(248, 248, 248);
     font-weight: 600;
     height: 240px;
     margin-top: 10px;
 }
 #mainAboutCard #right{
     background-color: #7fe07ac9;
+    border: 3px solid #7fe07a;
     color: rgb(255, 255, 255);
     font-weight: 600;
     height: 240px;
@@ -91,6 +91,7 @@ main h3{
     
     #mainAboutCard #mid{
     background-color: rgba(128, 0, 128, 0.537);
+    border: 3px solid rgb(128, 0, 128);
     color: rgb(233, 233, 233);
     font-weight: 600;
     height: 490px;
