@@ -119,13 +119,23 @@ article img{
 
 /* Contact Page */
 #contactBody{
-    background-color: rgb(159, 201, 238);
+    background-color: rgba(189, 159, 238, 0.477);
 }
 #contactMain .card{
     background-image: url('https://yolandamatiwane.github.io/ecomImages/light-pink-flowers-empty-white-vintage-3d-parchment-banner-scroll_9883-4.avif');
     background-repeat: no-repeat;
     background-size:100%;
-    width: 1000px;
-    height: 500px;
-    margin-left: 170px;
+    width: 900px;
+    height: 515px;
+    margin-top: 10px;
+    margin-left: 250px;
+    border: none;
+}
+
+#forms{
+    margin-top: 45px;
+    margin-left: 100px;
+    text-align: center;
+    align-content: center;
+    width: 400px;
 }
