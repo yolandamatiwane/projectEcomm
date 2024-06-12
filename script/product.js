@@ -41,13 +41,13 @@ let searchBtn = document.querySelector('#searching')
 let resetBtn = document.querySelector('#searchingReset')
 let sortBtn = document.querySelector('#sorting')
 let inp = document.querySelector('#inp')
-
+//resets page
 resetBtn.addEventListener('click', ()=>{
     article.innerHTML = ``
     inp.value = ''
     display(books)
 })
-//shows filtered results
+//shows filtered results using search button
 searchBtn.addEventListener('click',()=>{
     article.innerHTML = ``
     let search = books.filter(book=>{
@@ -72,10 +72,33 @@ purchasedBtn.forEach(button=>{
 })
 
 //sorts by category
-sortBtn.addEventListener('click',()=>{
-    article.innerHTML = ``
-    books.sort(function(a,b){
-        return a.price - b.price
+books.forEach(book=>{
+    let selected = document.querySelectorAll('.dropdown-menu')
+    selected.forEach(option=>{
+    option.addEventListener('click',()=>{
+        if(option.getAttribute(value)==`${book.category}`){
+            display(selected)
+        }
     })
-    display(books)
 })
+})
+
+// selected.forEach(
+//     if(target.)
+// // )
+// searchBtn.addEventListener('click',()=>{
+//     article.innerHTML = ``
+//     let search = books.filter(book=>{
+//         return book..toLowerCase().includes(inp.value.toLowerCase())
+        
+//     })
+//     display(search)
+// })
+
+//     option.addEventListener('click',()=>{
+//         article.innerHTML = ``
+    
+        
+//         display(books)
+//     })
+// )

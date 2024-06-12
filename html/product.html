@@ -44,7 +44,16 @@
     </nav>
     <main id="productMain">
       <section>
-        <button id="sorting">Sorting</button>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" id="sorting" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Categories
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" value="Children Literature">Children's Books</a></li>
+            <li><a class="dropdown-item" value="Young Adult Romance">YA Romance</a></li>
+            <!-- <li><a class="dropdown-item" href="#">Fantasy</a></li> -->
+          </ul>
+        </div>
         <input type="text" id="inp">
         <button id="searching">Search</button>
         <button id="searchingReset">Reset Search</button>
