@@ -116,3 +116,16 @@ article img{
 #purchase{
     width: 120px;
 }
+
+/* Contact Page */
+#contactBody{
+    background-color: rgb(159, 201, 238);
+}
+#contactMain .card{
+    background-image: url('https://yolandamatiwane.github.io/ecomImages/light-pink-flowers-empty-white-vintage-3d-parchment-banner-scroll_9883-4.avif');
+    background-repeat: no-repeat;
+    background-size:100%;
+    width: 1000px;
+    height: 500px;
+    margin-left: 170px;
+}
