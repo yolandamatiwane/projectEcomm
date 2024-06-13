@@ -18,9 +18,10 @@ let book_3 = new createBooks(3,'It ends with Us','Colleen Hoover','Young Adult R
 let books = [book_1,book_2,book_3]
 
 localStorage.setItem('books',JSON.stringify(books))
-let purchasedItems = []
+
 //shows default
 function display(booksArray){
+    article.innerHTML = ``
     booksArray.forEach(book=>{
     article.innerHTML+=`
                     <div class="card" id='cards'>
@@ -39,7 +40,7 @@ function display(booksArray){
 display(books)
 let searchBtn = document.querySelector('#searching')
 let resetBtn = document.querySelector('#searchingReset')
-let sortBtn = document.querySelector('#sorting')
+
 let inp = document.querySelector('#inp')
 //resets page
 resetBtn.addEventListener('click', ()=>{
@@ -59,46 +60,35 @@ searchBtn.addEventListener('click',()=>{
 
 //part1 of checkout
 let purchasedBtn = document.querySelectorAll('#purchase')
-
+let purchasedItems = JSON.parse(localStorage.getItem('purchasedItems')) || []
 function addToCheckout(id){
     let [item] = books.filter(object=> object.id === +id)
     purchasedItems.push(item)
-    localStorage.setItem("purchasedItems",JSON.stringify(item))
+    console.log(purchasedItems)
+
 }
 purchasedBtn.forEach(button=>{
     button.addEventListener('click',(event)=>{
         addToCheckout(event.target.value)
+        localStorage.setItem("purchasedItems",JSON.stringify(purchasedItems))
     })
+    
 })
 
 //sorts by category
-books.forEach(book=>{
-    let selected = document.querySelectorAll('.dropdown-menu')
-    selected.forEach(option=>{
-    option.addEventListener('click',()=>{
-        if(option.getAttribute(value)==`${book.category}`){
-            display(selected)
-        }
+
+let selected = document.querySelector('#dropdown')
+selected.addEventListener('change',()=>{
+    let val = selected.value
+    if(val == 'none'){
+        display(books)
+        return
+    }
+    console.log(val);
+    let sort = books.filter(book=>{
+        return book.category.includes(val)
+        
     })
-})
-})
+    display(sort)
 
-// selected.forEach(
-//     if(target.)
-// // )
-// searchBtn.addEventListener('click',()=>{
-//     article.innerHTML = ``
-//     let search = books.filter(book=>{
-//         return book..toLowerCase().includes(inp.value.toLowerCase())
-        
-//     })
-//     display(search)
-// })
-
-//     option.addEventListener('click',()=>{
-//         article.innerHTML = ``
-    
-        
-//         display(books)
-//     })
-// )
+})
