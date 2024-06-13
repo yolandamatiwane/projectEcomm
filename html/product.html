@@ -7,79 +7,62 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>Document</title>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-custom" id="nav">
+<body id="productBody">
+    <nav class="navbar navbar-expand-lg navbar-custom" id="navProd">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Enchanted Pages</a>
+          <a class="navbar-brand" href="/index.html">Enchanted Pages</a>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/html/about.html">About</a>
+                <a class="nav-link" href="about.html">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="/html/product.html">Product</a>
+                <a class="nav-link" aria-current="page" href="product.html">Product</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/html/admin.html">Admin</a>
+                <a class="nav-link" href="admin.html">Admin</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/html/checkout.html">Checkout</a>
+                <a class="nav-link" href="checkout.html">Checkout</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/html/contact.html">Contact</a>
+                <a class="nav-link" href="contact.html">Contact</a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
           </div>
         </div>
     </nav>
     <main id="productMain">
       <section>
-<<<<<<< HEAD
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" id="sorting" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Categories
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" value="Children Literature">Children's Books</a></li>
-            <li><a class="dropdown-item" value="Young Adult Romance">YA Romance</a></li>
-            <!-- <li><a class="dropdown-item" href="#">Fantasy</a></li> -->
-          </ul>
+        <div class="card">
+          <h3>Products:</h3>
+        <div class="card-body">
+          <h4 class="card-title">
+            Embark on your literary <span id="addingColor">adventure</span> today!
+            <br> Are you prepared to dive into a world of endless possibilities <span>?</span> Explore our curated collection below and uncover treasures waiting to be discovered. Let the pages ignite your imagination and transport you to new realms. Start your book-buying journey now and unlock the magic that awaits!
+          </h4>
+          
         </div>
-=======
-        <select name="" id="dropdown">
-          <!-- <option value=""></option> -->
-
+      </div>
+      <div class="input-group">
+        <select type="button" class="btn btn-outline-pink" name="" id="dropdown">
           <option value="none" selected>No Filter</option>
           <option value="Children Literature">Children Literature</option>
-          <option value="Young Adult Romance">Young Adult Romance</option>
+          <option value="Young Adult">Young Adult</option>
         </select>
-        <!-- <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="sorting" data-bs-toggle="dropdown" aria-expanded="false">
-            Sort By Category
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" value="Children Literature" href="#">Chrildren's Books</a></li>
-            <li><a class="dropdown-item" value="Young Adult Romance" href="#">Young Adults</a></li>
-            <li><a class="dropdown-item" value="" href="#">Something else here</a></li>
-          </ul>
-        </div> -->
->>>>>>> 7221ffb31d880235e23552fd04a8047f30966b82
-        <input type="text" id="inp">
-        <button id="searching">Search</button>
-        <button id="searchingReset">Reset Search</button>
+        <button class="btn btn-outline-pink" type="button" id="sorting">Sort</button>
+        <input type="text" class="form-control custom-input-width" placeholder="Search Here..." id="inp">
+        <button class="btn btn-outline-pink" type="button" id="searching">Search</button>
+        <button class="btn btn-outline-pink" type="button" id="searchingReset">Reset</button>
+      </div>
       </section>
       <article>
-
       </article>
       
     </main>

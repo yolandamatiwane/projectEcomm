@@ -97,25 +97,70 @@ main h3{
     height: 490px;
     margin-top: 10px;
 }
-
+/* Product Page */
+#productBody{
+    background-color: #e2d1de93;
+}
+#productBody .nav-link, #productBody .navbar-brand{
+    color: rgb(201, 50, 193);
+    font-weight: 600;
+}
+#productMain .btn-outline-pink {
+    color: rgb(201, 50, 193); 
+    border-color: rgb(201, 50, 193);
+}
+#productMain .btn-outline-pink:hover {
+    color: #fff; 
+    background-color: rgb(201, 50, 193) ; 
+  }
+#productMain #inp{
+    color: rgb(201, 50, 193);
+    border-color: rgb(201, 50, 193);
+}
+section .card{
+    background-image: url('https://yolandamatiwane.github.io/ecomImages/study-background-g4ckerc0qf2h8d0u.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    color: #ffffff;
+    font-weight: 800;
+    border: none;
+}
+#productMain .card h3{
+    color: white;
+}
+/* section .card .card-title{
+    background-color:rgba(201, 50, 193, 0.308);
+    font-weight: 600;
+    margin-top: 100px;
+} */
 article{
     margin-top: 5%;
     display:grid;
     grid-template-columns: repeat( 3, 1fr);
 }
+article p{
+    color: #9b1768;
+    font-weight: 900;
+    text-align: center;
+}
 article img{
-    width: 400px;
-    height: 200px;
+    width: 350px;
+    height: 250px;
 }
 #viewMore{
-    width: 100px;
+    margin-right: 30px;
 }
 #cards{
-    width: 400px;
+    width: 350px;
+    margin-bottom: 30px;
+    border: none;
+    color: white;
+    font-weight: 600;
+    background-color: #d46bc654;
+    margin-left: 30px;
 }
-#purchase{
-    width: 120px;
-}
+
 
 /* Contact Page */
 #contactBody{
@@ -138,4 +183,10 @@ article img{
     text-align: center;
     align-content: center;
     width: 400px;
+}
+
+/* Checkout Page */
+#checkoutMain table{
+    width: 900px;
+    margin-left: 250px;
 }
