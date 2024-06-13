@@ -11,7 +11,7 @@ let article = document.querySelector('article')
 let tbody = document.querySelector('tbody')
 let pro = localStorage.getItem('books')
 let fromProducts = JSON.parse(localStorage.getItem('books')) || []
-
+//displaying data from products page
 fromProducts.forEach(book => {
     tbody.innerHTML +=   `
                              <tr>
@@ -22,10 +22,12 @@ fromProducts.forEach(book => {
                                 <td><img src="${book.image}"></td>
                                 <td>${book.price}</td>
                                 <td>${book.quantity}</td>
-                                <td>${book.description}</td>
+                                
+                                <td><button type="button" id="deleteProduct">-</button></td>
+                                <td><button type="button" id="addToProduct">+</button></td>
                             </tr>
                         `
-});
+})
 
 function createBooks(id,title,author,category,image,price,quantity,description){
     this.id = id
@@ -37,7 +39,7 @@ function createBooks(id,title,author,category,image,price,quantity,description){
     this.quantity = quantity
     this.description = description
 }
-
+//adding new data
 btn.addEventListener('click',()=>{
     let adminBooks = new createBooks(id.value,title.value,author.value,category.value,img.value,price.value,quantity.value,description.value)
     tbody.innerHTML +=   `
@@ -49,9 +51,12 @@ btn.addEventListener('click',()=>{
                                 <td><img src="${adminBooks.image}"></td>
                                 <td>${adminBooks.price}</td>
                                 <td>${adminBooks.quantity}</td>
-                                <td>${adminBooks.description}</td>
+                                <td><button type="button" id="deleteProduct">-</button></td>
+                                <td><button type="button" id="addToProduct">+</button></td>
                             </tr>
                         `
     fromProducts.push(adminBooks)
+    localStorage.setItem("books",JSON.stringify(fromProducts))
+    console.log(fromProducts)
 })
 

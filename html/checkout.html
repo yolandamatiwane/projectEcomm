@@ -14,7 +14,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <a class="navbar-brand" href="index.html">Enchanted Pages</a>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <div class="collapse navbar-collapse justify-content-end" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a class="nav-link" href="/index.html">Home</a>
@@ -39,6 +39,12 @@
         </div>
     </nav>
     <main id="checkoutMain">
+      <div class="card" id="checkoutCard">
+        <div class="card-body">
+          <h3 class="card-title">Welcome to Checkout!!</h3>
+          <h5 class="card-text" id="orderSumText">Your order summary is below, please review your order.</h5>
+        </div>
+      </div>
       <table class="table">
         <thead>
           <tr>
@@ -54,12 +60,13 @@
         <tfoot>
           <tr>
             <td colspan="3">Total Amount</td>
-            <td>
-              <button class="btn btn-outline-dark" type="button" id="calculate">Calculate</button><span id="ans"></span>
+            <td colspan="2">
+              <span id="ans"></span>
             </td>
           </tr>
         </tfoot>
       </table>
+      <button type="button" class="btn btn-outline-pink" id="submitPurchase">Complete Purchase</button>
     </main>
     <footer id="footer">
       <p class="copyright">
