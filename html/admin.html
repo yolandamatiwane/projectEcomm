@@ -43,7 +43,85 @@
         </div>
     </nav>
     <main>
-      
+      <section>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  ADD TO PRODUCTS:
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="adminId" class="form-label">Product ID:</label>
+            <input type="number" class="form-control" id="adminId">
+          </div>
+          <div class="mb-3">
+            <label for="adminTitle" class="form-label">Product Title:</label>
+            <input type="text" class="form-control" id="adminTitle">
+          </div>
+          <div class="mb-3">
+            <label for="adminAuthor" class="form-label">Author</label>
+            <input type="name" class="form-control" id="adminAuthor">
+            
+          </div>
+          <div class="mb-3">
+            <label for="adminGenre" class="form-label">Category:</label>
+            <input type="text" class="form-control" id="adminGenre">
+            
+          </div>
+          <div class="mb-3">
+            <label for="adminImg" class="form-label">img url</label>
+            <input type="text" class="form-control" id="adminImg">
+          </div>
+          <div class="mb-3">
+            <label for="adminPrice" class="form-label">Price</label>
+            <input type="number" class="form-control" id="adminPrice">
+          </div>
+          <div class="mb-3">
+            <label for="adminQuantity" class="form-label">Quantity</label>
+            <input type="number" class="form-control" id="adminQuantity">
+          </div>
+          <div class="mb-3">
+            <label for="adminDescription" class="form-label">Description</label>
+            <input type="text" class="form-control" id="adminDescription">
+          </div>
+          <button type="button" class="btn btn-custom" id="adminAdd">ADD</button>
+        </form>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+      </section>
+      <article>
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">id</th>
+              <th scope="col">title</th>
+              <th scope="col">author</th>
+              <th scope="col">genre</th>
+              <th scope="col">img</th>
+              <th scope="col">price</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">description</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </article>
     </main>
     <footer id="footer">
       <p class="copyright">
