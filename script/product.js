@@ -35,12 +35,35 @@ function display(booksArray){
                         <img class="card-img-top" src='${book.image}'>
                         <div class="card-body">
                         <h6 class="card-title">${book.title}</h6>
-                        R${book.price}
+                        ${book.price}
                         <br>
-                        <button type="button" class="btn btn-outline-pink" id="viewMore">View More</button><button type="button" class="btn btn-outline-pink" id="purchase" value="${book.id}">ADD to Cart</button>
-                        <div>
-    
+                        <button type="button" class="btn btn-outline-pink" id="purchase" value="${book.id}">ADD to Cart</button>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-outline-pink" id="viewMore" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        View More
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel"> Product Description</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card">
+                                <img src="${book.image}"
+                                <div class="card-body">
+                                <p class="card-text">${book.description}</p>
+                                </div>
+                                </div>
+                            </div>
+                            
+                            </div>
                         </div>
+                        </div>
+                        
     
     
                      `
@@ -70,10 +93,18 @@ searchBtn.addEventListener('click',()=>{
 
 //part1 of checkout
 let purchasedBtn = document.querySelectorAll('#purchase')
-let purchasedItems =[]
+let purchasedItems =JSON.parse(localStorage.getItem('purchasedItems')) ||[]
 function addToCheckout(id){
-    let [item] = books.filter(object=> object.id === +id)
-    purchasedItems.push(item)
+   let existItems = purchasedItems.findIndex(item=> item.id ===+id)
+    if(existItems!==-1){
+        purchasedItems[existItems].quantity++
+    }else{
+        let item = books.find(object=> object.id === +id)
+        if(item){
+            item.quantity = 1
+            purchasedItems.push(item)
+        }
+    }
     console.log(purchasedItems)
 }
 purchasedBtn.forEach(button=>{
@@ -84,7 +115,7 @@ purchasedBtn.forEach(button=>{
     
 })
 
-//sorts by category
+//filter by category
 
 let selected = document.querySelector('#dropdown')
 selected.addEventListener('change',()=>{
@@ -102,5 +133,14 @@ selected.addEventListener('change',()=>{
 
 })
 
+// sort by price
+
+let sorting = document.querySelector('#sorting')
+sorting.addEventListener('click',()=>{
+    let sorted = books.sort(function(a,b){
+        return a.price - b.price
+    })
+    display(sorted)
+})
 
 // still need to add a spinner for books=[] and sort by price

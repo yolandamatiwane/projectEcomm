@@ -1,45 +1,41 @@
 let tbody = document.querySelector('tbody')
 let cartDis = localStorage.getItem('purchasedItems')
 let items = JSON.parse(localStorage.getItem('purchasedItems')) || []
+let grandtotal = 0
 // spinner
 // tbody.innerHTML = `<div>Hehehehehehehehehe</div>`
 // setTimeout(function() {
     
 // },1000)
 tbody.innerHTML = ``
-    items.forEach(item=>{
+items.forEach((item,index)=>{
+    let subtotal = (item.price * item.quantity).toFixed(2)
+    // console.log(grandtotal)
     tbody.innerHTML += `
-                    <tr  class="table-light">
-                        <td>${item.title}</td>
-                        <td><span id="amount">${item.price}</span></td>
-                        <td><input type="number" id="inp" value="${item.quantity}"></td>
-                        <td id="smlTot"> </td>
-                    </tr>
+                        <tr  class="table-light">
+                            <td>${item.title}</td>
+                            <td><span id="amount">${item.price}</span></td>
+                            <td><input type="number" id="inp" value="${item.quantity}"></td>
+                            <td><span id="smlTot">${subtotal}</span></td>
+                            <td class="delete" data-id="${item.id}"> delete</td>
+                        </tr>
 
-                `
+                        `
                
 })
 
-// calculation
-let inp = document.querySelectorAll('#inp')
+// remove from cart
+let remove = document.querySelectorAll('.delete')
 
-inp.forEach((input,index)=>{
-    input.addEventListener('input',()=>{
-        subtotal(index)
-        calculateTotal()
+function removed(id) {
+    let purchasedItems = JSON.parse(localStorage.getItem('purchasedItems')) || []
+    purchasedItems = purchasedItems.filter(item => item.id !== +id)
+    localStorage.setItem('purchasedItems', JSON.stringify(purchasedItems))
+}
+
+remove.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        removed(event.target.dataset.id)
+        event.target.closest('tr').remove();
     })
 })
-// Function to update subtotal for a given item index
-function updateSubtotal(index) {
-    let quantity = parseInt(inp1[index].value);
-    let price = parseFloat(items[index].price);
-    let subtotal = quantity * price;
-    smTot[index].textContent = subtotal.toFixed(2);
-}
-
-// Function to calculate total
-function calculateTotal() {
-    let subtotalArray = Array.from(smTot).map(td => parseFloat(td.textContent));
-    let totalPrice = subtotalArray.reduce((acc, val) => acc + val, 0);
-    total.textContent = totalPrice.toFixed(2);
-}
