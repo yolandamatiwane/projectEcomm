@@ -3,8 +3,26 @@
     font-family: 'Poppins',sans-serif;
     text-align: center;
 }
+@media (max-width: 800px) {
+    #indexCard{
+        flex-direction: row;
+        font-size: 12px;
+        
+    }
+    .container .row{
+     flex-direction: column;
+ 
+    }
+ 
+}
+
+/* Index/Home Page */
 #index{
     background-color: #ffffff;
+}
+#index .btn-outline-pink {
+    color: #9b1768;
+    border-color: #9b1768;
 }
 #index .nav-link, #index .navbar-brand{
     color: rgb(201, 50, 193);
@@ -47,7 +65,7 @@
 /* footer */
 #footer{
 	/* border-top: 2px solid rgb(5, 120, 112); */
-    
+    position: fixed;
 	padding-top: .7em;
 }
 .copyright{
@@ -68,6 +86,10 @@
     border: none;
     padding: auto;
 }
+#mainAboutCard h6{
+    color: #4b0a2b;
+    font-weight: 800;
+}
 main h3{
     color: #ed529f;
     font-weight: 800;
@@ -80,7 +102,7 @@ main h3{
     height: 240px;
     margin-top: 10px;
 }
-#mainAboutCard #right{
+#mainAboutCard #right, #mainAboutCard #right2{
     background-color: #7fe07ac9;
     border: 3px solid #7fe07a;
     color: rgb(255, 255, 255);
@@ -88,7 +110,10 @@ main h3{
     height: 240px;
     margin-top: 10px;
 }
-    
+#mainAboutCard #right2{
+    background-image: url('https://yolandamatiwane.github.io/ecomImages/VswD80.jpg');
+    background-size: 350px;
+}
 #mainAboutCard #mid{
     background-color: rgba(128, 0, 128, 0.537);
     border: 3px solid rgb(128, 0, 128);
@@ -129,11 +154,11 @@ section .card{
 #productMain .card h3{
     color: white;
 }
-/* section .card .card-title{
-    background-color:rgba(201, 50, 193, 0.308);
+section .card .card-title{
+    background-color:rgba(34, 14, 33, 0.308);
     font-weight: 600;
     margin-top: 100px;
-} */
+}
 article{
     margin-top: 5%;
     display:grid;
@@ -163,18 +188,32 @@ article img{
 
 
 /* Contact Page */
-#contactBody{
-    background-color: rgba(189, 159, 238, 0.477);
+#contact{
+    background-color: rgb(255, 255, 255);
+}
+#contact .nav-link, #contact .navbar-brand{
+    color: #6b1064c2;
+    font-weight: 600;
 }
 #contactMain .card{
-    background-image: url('https://yolandamatiwane.github.io/ecomImages/light-pink-flowers-empty-white-vintage-3d-parchment-banner-scroll_9883-4.avif');
-    background-repeat: no-repeat;
-    background-size:100%;
-    width: 900px;
+    background-color: rgba(255, 255, 255, 0.9);
     height: 515px;
     margin-top: 10px;
-    margin-left: 250px;
     border: none;
+}
+#contactMain .card h4{
+    color: #6b1064c2;
+    font-weight: 700;
+}
+#contactMain .card img{
+    height: 450px;
+    width: 450px;
+    margin-bottom: 10px;
+}
+#contactMain .card .btn-outline-pink{
+    border-color: #4b0a2b;
+    border-width: 2px;
+    color: #4b0a2b;
 }
 
 #forms{
@@ -189,10 +228,7 @@ article img{
 #checkoutBody{
     background-color: rgba(221, 160, 221, 0.575);
 }
-#checkoutMain table{
-    width: 900px;
-    margin-left: 250px;
-}
+
 #checkoutCard{
     background-image: url('https://yolandamatiwane.github.io/ecomImages/a78cb7b8faf56995c255a429d2fe6b8d.jpg');
     height: 170px;
@@ -207,6 +243,20 @@ article img{
     border-color: rgb(97, 9, 92);
     
 }
-/* #checkoutMain{
-    background-image: url('https://yolandamatiwane.github.io/ecomImages/a78cb7b8faf56995c255a429d2fe6b8d.jpg');
-} */
+
+/* Admin Page */
+#adminMain .btn-outline-pink {
+    border-color: #07471c;
+    color: #07471c;
+}
+
+#adminMain table img{
+    width: 200px;
+    height: 200px;
+}
+
+#adminBody{
+    background-color: #d9d7b2a1;
+    
+}
+

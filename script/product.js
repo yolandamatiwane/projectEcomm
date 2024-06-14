@@ -16,9 +16,9 @@ let book_2 = new createBooks(2,'Sulwe','Lupita Nyongo','Children Literature','ht
 let book_3 = new createBooks(3,'Queens of Geek','Jen Wilde','Young Adult','https://yolandamatiwane.github.io/ecomImages/books/28245707.jpg',300,1,'The story follows three friends as they attend SupaCon, a fictional version of a pop culture convention. The narrative explores themes of friendship, romance, and identity, with a focus on LGBTQ+ representation and fandom culture. It celebrates diversity and empowerment, making it a beloved read among fans of contemporary YA literature.')
 let book_4 = new createBooks(4,'Red, White & Royal Blue','Casey McQuiston','Young Adult','https://yolandamatiwane.github.io/ecomImages/books/41150487.jpg',350.99,1,'It falls within the romance and LGBTQ+ fiction genres. The story revolves around the unlikely romance between Alex Claremont-Diaz, the First Son of the United States, and Prince Henry of Wales. Set in an alternate reality where a woman is President of the United States, the novel explores themes of love, politics, and identity. It\'s a charming and witty tale that captivates readers with its humor, heartwarming moments, and compelling characters.')
 let book_5 = new createBooks(5,'Simone Breaks all the Rules','Debbie Rigaud','Young Adult','https://yolandamatiwane.github.io/ecomImages/books/53200402.jpg',250,1,'The story follows sixteen-year-old Simone Thibodeaux, who decides to break free from her strict Haitian immigrant parents\' rules by pursuing a secret relationship with a charming and rebellious classmate named Miles. As Simone navigates the complexities of family expectations, cultural identity, and teenage romance, she learns valuable lessons about love, independence, and staying true to herself. The novel explores themes of self-discovery, cultural heritage, and the courage to challenge societal norms.')
-let book_6 = new createBooks(6,'Clifford The Big Red Dog','Norman Bridwell','Children\'s Literature','https://yolandamatiwane.github.io/ecomImages/books/858719.jpg',100,1,'he series follows the adventures of a giant red dog named Clifford and his owner, Emily Elizabeth. Clifford\'s enormous size leads to humorous and heartwarming situations as he interacts with the world around him, teaching young readers lessons about friendship, kindness, and acceptance. The books are beloved for their colorful illustrations and simple yet engaging storytelling, making them a timeless favorite among children and parents alike.')
+let book_6 = new createBooks(6,'Clifford The Big Red Dog','Norman Bridwell','Children Literature','https://yolandamatiwane.github.io/ecomImages/books/858719.jpg',100,1,'he series follows the adventures of a giant red dog named Clifford and his owner, Emily Elizabeth. Clifford\'s enormous size leads to humorous and heartwarming situations as he interacts with the world around him, teaching young readers lessons about friendship, kindness, and acceptance. The books are beloved for their colorful illustrations and simple yet engaging storytelling, making them a timeless favorite among children and parents alike.')
 
-let books = [book_1,book_2,book_3,book_4,book_5,book_6]
+let books = JSON.parse(localStorage.getItem('books'))||[book_1,book_2,book_3,book_4,book_5,book_6]
 
 localStorage.setItem('books',JSON.stringify(books))
 
@@ -39,12 +39,12 @@ function display(booksArray){
                         <br>
                         <button type="button" class="btn btn-outline-pink" id="purchase" value="${book.id}">ADD to Cart</button>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-outline-pink" id="viewMore" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        <button type="button" class="btn btn-outline-pink" id="viewMore" data-bs-toggle="modal" data-bs-target="#staticBackdrop${book.id}">
                         View More
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal fade" id="staticBackdrop${book.id}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                             <div class="modal-header">
@@ -69,7 +69,7 @@ function display(booksArray){
                      `
     })}
 
-    }
+}
 display(books)
 let searchBtn = document.querySelector('#searching')
 let resetBtn = document.querySelector('#searchingReset')

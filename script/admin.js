@@ -7,43 +7,48 @@ let price = document.querySelector('#adminPrice')
 let quantity = document.querySelector('#adminQuantity')
 let description = document.querySelector('#adminDescription')
 let btn = document.querySelector('#adminAdd')
-let article = document.querySelector('article')
 let tbody = document.querySelector('tbody')
 let pro = localStorage.getItem('books')
 let fromProducts = JSON.parse(localStorage.getItem('books')) || []
+
 //displaying data from products page
-fromProducts.forEach(book => {
-    tbody.innerHTML +=   `
-                             <tr>
-                                <td>${book.id}</td>
-                                <td>${book.title}</td>
-                                <td>${book.author}</td>
-                                <td>${book.category}</td>
-                                <td><img src="${book.image}"></td>
-                                <td>${book.price}</td>
-                                <td>${book.quantity}</td>
-                                
-                                <td><button type="button" id="deleteProduct">-</button></td>
-                                <td><button type="button" id="addToProduct">+</button></td>
-                            </tr>
-                        `
-})
+function display(booksArray){
+    tbody.innerHTML = ``
+    booksArray.forEach(book => {
+        tbody.innerHTML +=   `
+                                <tr class="table-dark">
+                                    <td>${book.id}</td>
+                                    <td>${book.title}</td>
+                                    <td>${book.author}</td>
+                                    <td>${book.category}</td>
+                                    <td><img src="${book.image}"></td>
+                                    <td>${book.price}</td>
+                                    <td>${book.quantity}</td>
+                                    <td><button type="button" class="btn btn-outline-light" data-id="${book.id}" id="deleteProduct">remove</button></td>
+    
+                                </tr>
+                            `
+    })
+
+}
+display(fromProducts)
 
 function createBooks(id,title,author,category,image,price,quantity,description){
-    this.id = id
+    this.id = +id
     this.title = title
     this.author = author
     this.category = category
     this.image = image
-    this.price = price
-    this.quantity = quantity
+    this.price = +price
+    this.quantity = +quantity
     this.description = description
 }
-//adding new data
+
+//updating data A.K.A adding items to Products
 btn.addEventListener('click',()=>{
     let adminBooks = new createBooks(id.value,title.value,author.value,category.value,img.value,price.value,quantity.value,description.value)
     tbody.innerHTML +=   `
-                             <tr>
+                             <tr class="table-light">
                                 <td>${adminBooks.id}</td>
                                 <td>${adminBooks.title}</td>
                                 <td>${adminBooks.author}</td>
@@ -51,12 +56,39 @@ btn.addEventListener('click',()=>{
                                 <td><img src="${adminBooks.image}"></td>
                                 <td>${adminBooks.price}</td>
                                 <td>${adminBooks.quantity}</td>
-                                <td><button type="button" id="deleteProduct">-</button></td>
-                                <td><button type="button" id="addToProduct">+</button></td>
+                                <td><button type="button" class="btn btn-outline-pink" id="deleteProduct">remove</button></td>
                             </tr>
                         `
     fromProducts.push(adminBooks)
-    localStorage.setItem("fromAdmin",JSON.stringify(fromProducts))
+    localStorage.setItem("books",JSON.stringify(fromProducts))
     console.log(fromProducts)
 })
 
+
+
+//removing Items in Products
+
+let removeItem = document.querySelectorAll('#deleteProduct')
+function removed(id) {
+    let adminProducts = JSON.parse(localStorage.getItem('books')) || []
+    adminProducts = adminProducts.filter(item => item.id !== +id)
+    localStorage.setItem('books', JSON.stringify(adminProducts))
+    fromProducts = JSON.parse(localStorage.getItem('books'))
+    display(fromProducts)
+}
+
+removeItem.forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        removed(event.target.dataset.id)
+        event.target.closest('tr').remove()
+    })
+})
+
+// Sort by Price
+let adminSorting = document.querySelector('#adminSort')
+adminSorting.addEventListener('click',()=>{
+    let bookSorting = fromProducts.sort(function(a,b){
+        return a.price - b.price
+    })
+    display(bookSorting)
+})

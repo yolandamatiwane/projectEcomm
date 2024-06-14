@@ -19,6 +19,7 @@ items.forEach(item=>{
     tbody.innerHTML += `
                         <tr  class="table-light">
                             <td>${item.title}</td>
+                            <td>${item.category}</td>
                             <td><span id="amount">${item.price}</span></td>
                             <td><input type="number" id="inp" value="${item.quantity}"></td>
                             <td><span id="smlTot">${subtotal}</span></td>
@@ -59,10 +60,19 @@ remove.forEach(btn => {
     btn.addEventListener('click', (event) => {
         removed(event.target.dataset.id)
         event.target.closest('tr').remove()
+        total.innerText = grandtotal
     })
 })
-
+let reset = document.querySelector('#resetingCart')
+reset.addEventListener('click',()=>{
+    tbody.innerHTML = ``
+    total.innerText = ''
+    let reseting = []
+    localStorage.setItem("purchasedItems",JSON.stringify(reseting))
+})
 // Thank You Message
 tyBtn.addEventListener('click',()=>{
+    let reseting = []
+    localStorage.setItem("purchasedItems",JSON.stringify(reseting))
     alert('Thank You For Choosing Us <3')
 })

@@ -9,7 +9,7 @@
   <title>Admin</title>
 </head>
 
-<body>
+<body id="adminBody">
   <nav class="navbar navbar-expand-lg navbar-custom" id="nav">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03"
@@ -41,11 +41,15 @@
       </div>
     </div>
   </nav>
-  <main>
+  <main id="adminMain">
     <section>
-      <button type="button" class="btn btn-outline-danger" id="adminSort">Sort</button>
+      <!-- <div class="card" id="adminCard">
+        <h3>ADMIN/Book Keeping:</h3>
+      </div> -->
+      
+      <button type="button" class="btn btn-dark" id="adminSort">Sort</button>
       <!-- Button trigger modal -->
-      <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+      <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         ADD TO PRODUCTS:
       </button>
       
@@ -55,7 +59,7 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Adding To Product</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -97,35 +101,28 @@
                 <button type="button" class="btn btn-custom" id="adminAdd">ADD</button>
               </form>
             </div>
-            <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
-      </div> -->
-          </div>
+          </div> 
         </div>
       </div>
     </section>
-    <article>
-      <table class="table">
-        <thead>
-          <tr>
-            <th scope="col">id</th>
-            <th scope="col">title</th>
-            <th scope="col">author</th>
-            <th scope="col">genre</th>
-            <th scope="col">img</th>
-            <th scope="col">price</th>
-            <th scope="col">Quantity</th>
-            <!-- <th scope="col">description</th> -->
-            <th scope="col">remove</th>
-            <th scope="col">add</th>
+    <table class="table table-striped">
+      <thead class="table-light">
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">title</th>
+          <th scope="col">author</th>
+          <th scope="col">genre</th>
+          <th scope="col">img</th>
+          <th scope="col">price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Remove Item</th>
             
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-    </article>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+
   </main>
   <footer id="footer">
     <p class="copyright">

@@ -43,12 +43,14 @@
         <div class="card-body">
           <h3 class="card-title">Welcome to Checkout!!</h3>
           <h5 class="card-text" id="orderSumText">Your order summary is below, please review your order.</h5>
+          <button type="button" class="btn btn-outline-pink" id="resetingCart">Reset</button>
         </div>
       </div>
       <table class="table">
         <thead>
           <tr>
             <th scope="col">Item</th>
+            <th scope="col">Category</th>
             <th scope="col">Price</th>
             <th scope="col">Quantity</th>
             <th scope="col">Amount</th>
@@ -59,7 +61,7 @@
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="3">Total Amount</td>
+            <td colspan="4">Total Amount</td>
             <td colspan="2">
               <span id="ans"></span>
             </td>
