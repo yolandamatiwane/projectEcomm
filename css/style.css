@@ -186,7 +186,27 @@ article img{
 }
 
 /* Checkout Page */
+#checkoutBody{
+    background-color: rgba(221, 160, 221, 0.575);
+}
 #checkoutMain table{
     width: 900px;
     margin-left: 250px;
 }
+#checkoutCard{
+    background-image: url('https://yolandamatiwane.github.io/ecomImages/a78cb7b8faf56995c255a429d2fe6b8d.jpg');
+    height: 170px;
+    border: plum;
+}
+#checkoutCard #orderSumText{
+    margin-top: 30px;
+    font-weight: 700;
+}
+#checkoutMain .btn-outline-pink{
+    color: rgb(97, 9, 92); 
+    border-color: rgb(97, 9, 92);
+    
+}
+/* #checkoutMain{
+    background-image: url('https://yolandamatiwane.github.io/ecomImages/a78cb7b8faf56995c255a429d2fe6b8d.jpg');
+} */
