@@ -42,6 +42,7 @@ inputs.forEach(input=>{
             grandtotal +=parseFloat(subTotal)
         })
         total.innerText = grandtotal.toFixed(2)
+        localStorage.setItem("purchasedItems",JSON.stringify(purchasedItems))
     })
 })
 //still need to update local storage

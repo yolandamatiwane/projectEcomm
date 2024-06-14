@@ -56,7 +56,7 @@ btn.addEventListener('click',()=>{
                             </tr>
                         `
     fromProducts.push(adminBooks)
-    localStorage.setItem("books",JSON.stringify(fromProducts))
+    localStorage.setItem("fromAdmin",JSON.stringify(fromProducts))
     console.log(fromProducts)
 })
 
