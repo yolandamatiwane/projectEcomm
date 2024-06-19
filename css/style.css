@@ -3,16 +3,7 @@
     font-family: 'Poppins',sans-serif;
     text-align: center;
 }
-@media (max-width: 800px) {
-    #indexCard{
-        flex-direction: row;
-        font-size: 12px;
-        
-    }
-    .container .row{
-     flex-direction: column;
- 
-    }
+@media screen and  (max-width: 800px) {
  
 }
 
@@ -52,6 +43,7 @@
     margin-bottom: 20px;
 }
 #indexCard h3{
+    margin-top: 100px;
     color: #9b1768;
 }
 #indexCard h6{
@@ -61,12 +53,21 @@
     width: fit-content;
     height: 25rem;
 }
+#indexCard button{
+    height: 35px;
+}
 
 /* footer */
 #footer{
-	/* border-top: 2px solid rgb(5, 120, 112); */
+	border-top: 2px solid rgba(245, 245, 245, 0);
     position: fixed;
 	padding-top: .7em;
+    text-align: center;
+    padding: 3px;
+    background-color: rgba(245, 245, 245, 0);
+    color: white;
+    bottom: 0;
+    width: 100%;
 }
 .copyright{
     /* text-align: right; */
