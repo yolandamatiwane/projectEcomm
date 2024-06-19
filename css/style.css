@@ -232,7 +232,15 @@ article img{
 #contactMain .card .myIcons img:hover{
     transform: scale(0.5);
 }
+@media (max-width: 800px) {
+    .container .row{
+     flex-direction: column;
+    }
+    .container .row form{
+        margin-left: 0;
+    }
 
+}
 /* Checkout Page */
 #checkoutBody{
     background-color: rgba(221, 160, 221, 0.575);
