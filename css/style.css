@@ -224,6 +224,14 @@ article img{
     align-content: center;
     width: 400px;
 }
+#contactMain .card .myIcons img{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+#contactMain .card .myIcons img:hover{
+    transform: scale(0.5);
+}
 
 /* Checkout Page */
 #checkoutBody{
