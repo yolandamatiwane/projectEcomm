@@ -239,6 +239,9 @@ article img{
     .container .row form{
         margin-left: 0;
     }
+    table{
+        width: 100%;
+    }
 
 }
 /* Checkout Page */
