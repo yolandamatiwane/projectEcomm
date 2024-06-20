@@ -25,10 +25,8 @@ localStorage.setItem('books',JSON.stringify(books))
 //shows default
 
 function display(booksArray){
-    article.innerHTML = ``
-    if(booksArray.length === 0){
-        article.innerHTML = `<p> Sorry! Item was not found. </p>`
-    }else{
+    try{
+        article.innerHTML = ``
         booksArray.forEach(book=>{
         article.innerHTML+=`
                         <div class="card" id='cards'>
@@ -67,7 +65,10 @@ function display(booksArray){
     
     
                      `
-    })}
+    })
+}catch(error){
+    article.innerHTML = `<p> Sorry! Item was not found. </p>`
+}
 
 }
 display(books)
@@ -95,17 +96,19 @@ searchBtn.addEventListener('click',()=>{
 let purchasedBtn = document.querySelectorAll('#purchase')
 let purchasedItems =JSON.parse(localStorage.getItem('purchasedItems')) ||[]
 function addToCheckout(id){
-   let existItems = purchasedItems.findIndex(item=> item.id ===+id)
-    if(existItems!==-1){
-        purchasedItems[existItems].quantity++
-    }else{
-        let item = books.find(object=> object.id === +id)
-        if(item){
-            item.quantity = 1
-            purchasedItems.push(item)
+   try{let existItems = purchasedItems.findIndex(item=> item.id ===+id)
+        if(existItems!==-1){
+            purchasedItems[existItems].quantity++
+        }else{
+            let item = books.find(object=> object.id === +id)
+            if(item){
+                item.quantity = 1
+                purchasedItems.push(item)
+            }
         }
-    }
-    console.log(purchasedItems)
+    } catch (error){
+        article.innerHTML = 'Error with adding item to cart'+ error}
+    
 }
 purchasedBtn.forEach(button=>{
     button.addEventListener('click',(event)=>{
@@ -124,7 +127,6 @@ selected.addEventListener('change',()=>{
         display(books)
         return
     }
-    console.log(val);
     let sort = books.filter(book=>{
         return book.category.includes(val)
         
