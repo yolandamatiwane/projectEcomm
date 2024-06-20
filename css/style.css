@@ -3,10 +3,6 @@
     font-family: 'Poppins',sans-serif;
     text-align: center;
 }
-@media screen and  (max-width: 800px) {
- 
-}
-
 /* Index/Home Page */
 #index{
     background-color: #ffffff;
@@ -41,6 +37,9 @@
     height: 25rem;
     background-color: rgba(36, 121, 195, 0);
     margin-bottom: 20px;
+}
+#indexCard .card{
+    border: none;
 }
 #indexCard h3{
     margin-top: 100px;
@@ -159,11 +158,22 @@ section .card .card-title{
     background-color:rgba(34, 14, 33, 0.308);
     font-weight: 600;
     margin-top: 100px;
+    width: fit-content;
 }
 article{
     margin-top: 5%;
     display:grid;
     grid-template-columns: repeat( 3, 1fr);
+}
+@media (max-width:800px){
+    /* from products */
+    article {
+        grid-template-columns: 1fr; /* show one column */
+    }
+    .input-group #inp{
+        width: fit-content;
+    }
+
 }
 article p{
     color: #9b1768;
@@ -240,9 +250,7 @@ article img{
     .container .row form{
         margin-left: 0;
     }
-    table{
-        width: 100%;
-    }
+
     #forms{
         margin-left: 0;
         margin-top: 0;
@@ -269,8 +277,19 @@ article img{
     border-color: rgb(97, 9, 92);
     
 }
+#checkout table{
+    width: 100%;
+}
 
 /* Admin Page */
+#adminMain #Admin{
+    background-image: url('https://www.pngitem.com/pimgs/m/556-5569981_data-clipart-administrator-system-administrator-clipart-hd-png.png');
+}
+#adminMain h4{
+    margin-top: 10px;
+    color: #072038;
+    font-weight: 900;
+}
 #adminMain .btn-outline-pink {
     border-color: #07471c;
     color: #07471c;
@@ -285,4 +304,9 @@ article img{
     background-color: #d9d7b2a1;
     
 }
-
+@media (max-width: 800px){
+   #adminMain table img{
+    width: 20px;
+    height: 20px;
+   }
+}

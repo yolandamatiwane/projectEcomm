@@ -21,7 +21,7 @@ function display(booksArray){
                                     <td>${book.title}</td>
                                     <td>${book.author}</td>
                                     <td>${book.category}</td>
-                                    <td><img src="${book.image}"></td>
+                                    <td><img src="${book.image}" class="img-fluid"></td>
                                     <td>${book.price}</td>
                                     <td>${book.quantity}</td>
                                     <td><button type="button" class="btn btn-outline-light" data-id="${book.id}" id="deleteProduct">remove</button></td>
@@ -48,7 +48,7 @@ function createBooks(id,title,author,category,image,price,quantity,description){
 btn.addEventListener('click',()=>{
     let adminBooks = new createBooks(id.value,title.value,author.value,category.value,img.value,price.value,quantity.value,description.value)
     tbody.innerHTML +=   `
-                             <tr class="table-light">
+                             <tr class="table-dark">
                                 <td>${adminBooks.id}</td>
                                 <td>${adminBooks.title}</td>
                                 <td>${adminBooks.author}</td>
