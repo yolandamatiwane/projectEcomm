@@ -56,6 +56,7 @@
     height: 35px;
 }
 
+
 /* footer */
 #footer{
 	border-top: 2px solid rgba(245, 245, 245, 0);
@@ -81,9 +82,13 @@
 #mainAboutCard{
     margin-top: 10px;
     background-image: url('https://yolandamatiwane.github.io/ecomImages/cute-pastel-colored-seamless-pattern-background-illustration-with-books-blue-hearts-and-pencil-vector.jpg');
-    height: 520px;
+    background-size: cover; 
+    background-position: center; /* Keep the focus centered */
+    background-repeat: no-repeat;
+    height: auto;
+    min-height: 520px;
     border: none;
-    padding: auto;
+    padding: 20px;
 }
 #mainAboutCard h6{
     color: #4b0a2b;
@@ -311,7 +316,7 @@ article img{
 }
 
 
-nav .navbar-brand{
+/* nav .navbar-brand{
     margin-right: 600px;
 
-}
+} */
